@@ -2,9 +2,11 @@ import random
 import argparse
 
 def roll_dice(num_sides, num_rolls):
+    results = []
     for i in range(num_rolls):
         roll = random.randint(1, num_sides)
-        print(f"Roll {i+1}: {roll}")
+        results.append(roll)
+    return results
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Roll a dice of x sides x amount of times.")
@@ -12,4 +14,6 @@ if __name__ == "__main__":
     parser.add_argument("-n", "--num_rolls", type=int, default=1, help="number of times to roll the dice (default: 1)")
     args = parser.parse_args()
 
-    roll_dice(args.num_sides, args.num_rolls)
+    rolls = roll_dice(args.num_sides, args.num_rolls)
+    for i, roll in enumerate(rolls, start=1):
+        print(f"Roll {i}: {roll}")
