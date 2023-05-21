@@ -3,6 +3,13 @@ This is a simple Python script that simulates rolling a die (or multiple dice) a
 
 ## Requirements
 * Python 3.6 or higher
+* [PyInstaller](https://pyinstaller.org/en/stable/) for creating standalone executable
+
+## Installation
+You can install PyInstaller with pip:
+
+    pip install pyinstaller
+
 
 ## Usage
 Command line arguments:
@@ -14,6 +21,17 @@ Example:
     python dice_roller.py -d 6 -n 3
 
 This command will simulate rolling a 6-sided die 3 times.
+
+## Creating an Executable
+You can create a standalone executable using PyInstaller. Run the following command:
+
+    pyinstaller --onefile dice_roller.py
+
+This will create a dist directory containing the dice_roller executable. You can run this executable without needing Python installed.
+
+Example:
+
+    ./dist/dice_roller -d 6 -n 3
 
 ## Output
 The script will print the result of each die roll to the console. For example:
