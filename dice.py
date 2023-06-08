@@ -1,3 +1,7 @@
+"""
+A simple dice rolling program.
+"""
+
 import random
 import argparse
 import sys
