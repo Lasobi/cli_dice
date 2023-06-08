@@ -4,7 +4,6 @@ A simple dice rolling program.
 
 import random
 import argparse
-import sys
 
 
 def roll_dice(num_sides, num_rolls):
@@ -20,9 +19,9 @@ def roll_dice(num_sides, num_rolls):
     """
 
     results = []
-    for i in range(num_rolls):
-        roll = random.randint(1, num_sides)
-        results.append(roll)
+    for _ in range(num_rolls):
+        roll_result = random.randint(1, num_sides)
+        results.append(roll_result)
     return results
 
 
@@ -48,11 +47,9 @@ if __name__ == "__main__":
 
     if args.num_sides < 2:
         raise ValueError("Number of sides must be at least 2.")
-        sys.exit(1)
 
     if args.num_rolls < 1:
         raise ValueError("Number of rolls must be at least 1.")
-        sys.exit(1)
 
     rolls = roll_dice(args.num_sides, args.num_rolls)
     for i, roll in enumerate(rolls, start=1):
